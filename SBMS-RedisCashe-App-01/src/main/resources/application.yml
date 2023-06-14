@@ -1,0 +1,26 @@
+server:
+  port: 8083
+  
+spring:
+  cache:
+    type: redis
+    redis:
+      cache-null-values: true
+      time-to-live: 40000
+  
+  datasource:
+      url: jdbc:h2:mem:testRedis
+      username: sb
+      password: sb
+      driver-class-name: org.h2.Driver 
+      
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+    use-root-path: true
+  version:  '@springdoc.version'
